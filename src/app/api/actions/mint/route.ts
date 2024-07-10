@@ -21,6 +21,8 @@ const umi = createUmi(process.env.RPC_URL!).use(mplCore()).use(irysUploader())
 const signer = createSignerFromKeypair(umi, umi.eddsa.createKeypairFromSecretKey(bs58.decode(process.env.SIGNER_PK!)))
 umi.use(signerIdentity(signer, true))
 
+export const maxDuration = 60
+
 export const GET = (req: Request) => {
   const payload: ActionGetResponse = {
     icon: new URL('/solbound.png', new URL(req.url).origin).toString(),
