@@ -13,8 +13,8 @@ import { createBurnCheckedInstruction, getAssociatedTokenAddress } from '@solana
 import { decryptData } from '@/app/utils/encrypt'
 import { NftItem } from '@/app/types/Nft'
 
-const collectionAddress = publicKey('6ewTTop9jcMv2S9vpPybcjVPSuo4wQZJp55Wv6QfEdC2')
-const splMint = publicKey('4YUVQqvU11UrpHqU5S8pxN8aFZh4xnHCcZa4uWcNu45d')
+const collectionAddress = publicKey('8kMLNM2TGXRu9drhceN3ZxqoDPYWgcjZJBr9HiCUfxzn')
+const splMint = publicKey('DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263')
 const splBurnAmount = 1000000000
 
 const umi = createUmi(process.env.RPC_URL!).use(mplCore()).use(irysUploader())
