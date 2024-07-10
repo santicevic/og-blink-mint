@@ -15,7 +15,7 @@ import { NftItem } from '@/app/types/Nft'
 
 const collectionAddress = publicKey('8kMLNM2TGXRu9drhceN3ZxqoDPYWgcjZJBr9HiCUfxzn')
 const splMint = publicKey('DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263')
-const splBurnAmount = 100000
+const splBurnAmount = 1
 
 const umi = createUmi(process.env.RPC_URL!).use(mplCore()).use(irysUploader())
 const signer = createSignerFromKeypair(umi, umi.eddsa.createKeypairFromSecretKey(bs58.decode(process.env.SIGNER_PK!)))
@@ -105,7 +105,7 @@ export const POST = async (req: Request) => {
     const splAta = await getAssociatedTokenAddress(toWeb3JsPublicKey(splMint), account)
     const instructions = umiInstructions.map(toWeb3JsInstruction)
     instructions.push(
-      createBurnCheckedInstruction(splAta, toWeb3JsPublicKey(splMint), account, splBurnAmount, 9),
+      createBurnCheckedInstruction(splAta, toWeb3JsPublicKey(splMint), account, splBurnAmount, 5),
       ComputeBudgetProgram.setComputeUnitPrice({ microLamports: 100 })
     )
 
