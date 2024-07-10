@@ -15,7 +15,7 @@ import { NftItem } from '@/app/types/Nft'
 
 const collectionAddress = publicKey('8kMLNM2TGXRu9drhceN3ZxqoDPYWgcjZJBr9HiCUfxzn')
 const splMint = publicKey('DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263')
-const splBurnAmount = 1000000000
+const splBurnAmount = 100000
 
 const umi = createUmi(process.env.RPC_URL!).use(mplCore()).use(irysUploader())
 const signer = createSignerFromKeypair(umi, umi.eddsa.createKeypairFromSecretKey(bs58.decode(process.env.SIGNER_PK!)))
